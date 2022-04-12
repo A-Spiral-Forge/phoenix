@@ -3,13 +3,28 @@
 	--secondary-color: #ce6868;
 	--primary-font: 'Raleway', sans-serif;
 	--navbtn-bars-gap: 8px;
-	--navmenu-width: -220px;
+	--navmenu-width: -200px;
 	--translate-page: -200px;
-	--navmenu-transition-duration: 0.5s;
-	--navmenu-display-width: 60px;
+	--translate-fix: 200px;
+	--primary-transition-duration: 0.5s;
+	--navmenu-display-width: 80px;
 	--primary-border: 1px solid var(--secondary-color);
+	--secondary-border: 1px solid var(--primary-color);
 	--hover-opacity: 0.7;
 	--translate-navlink: 20px;
+	--scrollbar-width: 10px;
+}
+
+::-webkit-scrollbar {
+	width: var(--scrollbar-width);
+	background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--secondary-color);
+	border-radius: 6px;
+	border: var(--secondary-border);
+	border-width: 2px;
 }
 
 * {
@@ -51,7 +66,7 @@ body {
 	height: 80%;
 	width: 200px;
 	transform: translateX(var(--translate-page));
-	transition: all var(--navmenu-transition-duration);
+	transition: all var(--primary-transition-duration);
 	padding: 1rem;
 }
 
@@ -72,7 +87,7 @@ body {
 
 .navmenu > li > a > span {
 	padding-left: 0px;
-	transition: all var(--navmenu-transition-duration);
+	transition: all var(--primary-transition-duration);
 }
 
 .navmenu > li > a:hover > span {
@@ -87,7 +102,7 @@ body {
 	height: 1px;
 	width: 0px;
 	background-color: var(--secondary-color);
-	transition: all var(--navmenu-transition-duration);
+	transition: all var(--primary-transition-duration);
 }
 
 .navmenu > li > a:hover::before {
@@ -118,8 +133,8 @@ body {
 }
 
 .navbtn:hover {
-	width: 35px;
-	height: 30px;
+	width: 33px;
+	height: 28px;
 }
 
 .navbtn span {
@@ -174,23 +189,18 @@ body {
 	transform: rotate(-135deg);
 }
 
-.main {
-	width: calc(100% - var(--navmenu-width) + var(--navmenu-display-width));
-	transform: translateX(var(--translate-page));
-	display: flex;
-	flex-direction: row;
-	height: 100%;
-	transition: all var(--navmenu-transition-duration);
-}
-
 .col1 {
 	width: calc(var(--navmenu-display-width) - var(--navmenu-width));
 	height: 100%;
 	border-right: var(--primary-border);
-	position: sticky;
+	position: fixed;
+	top: 0;
+	left: 0;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
+	transform: translateX(var(--translate-page));
+	transition: all var(--primary-transition-duration);
 }
 
 .sidebar-shown {
@@ -208,25 +218,19 @@ body {
 
 .social__links > li {
 	width: 100%;
-	margin: 1rem 0rem;
+	margin: 0.2rem 0rem;
+	text-align: center;
 }
 
 .social__links > li > a {
 	font-size: 1.5rem;
 	color: var(--secondary-color);
-	transition: all var(--navmenu-transition-duration);
+	transition: all var(--primary-transition-duration);
 	line-height: 2.5rem;
 }
 
 .social__links > li > a:hover {
 	font-size: 2rem;
-}
-
-.col2 {
-	flex: 1;
-	position: relative;
-	display: flex;
-	flex-direction: column;
 }
 
 .header {
@@ -235,8 +239,15 @@ body {
 	padding-left: 3rem;
 	align-items: center;
 	border-bottom: var(--primary-border);
+	background-color: var(--primary-color);
+	z-index: 10;
 	position: fixed;
-	width: calc(100vw - var(--navmenu-display-width));
+	top: 0%;
+	left: calc(var(--navmenu-display-width));
+	right: 0%;
+	width: calc(100% - (var(--navmenu-display-width)));
+	transform: translateX(calc(var(--translate-page) + var(--translate-fix)));
+	transition: all var(--primary-transition-duration);
 }
 
 .header > .nav {
@@ -286,4 +297,57 @@ body {
 
 .header > .contactbtn > button:hover {
 	opacity: var(--hover-opacity);
+}
+
+.main {
+	width: calc(100vw - var(--navmenu-display-width) - var(--scrollbar-width));
+	transform: translateX(
+		calc(
+			var(--navmenu-display-width) + var(--translate-page) +
+				var(--translate-fix)
+		)
+	);
+	height: 100%;
+	transition: all var(--primary-transition-duration);
+	display: flex;
+	flex-direction: column;
+}
+
+.main--content {
+	margin-top: 80px;
+	width: inherit;
+	flex: 1;
+}
+
+.footer {
+	width: inherit;
+	padding: 1rem;
+	background-color: var(--secondary-color);
+}
+
+.footer--links > ul {
+	display: flex;
+	justify-content: center;
+	width: fit-content;
+	margin: 1rem auto;
+	border-top: var(--secondary-border);
+	border-width: 3px;
+	padding: 0rem 7rem;
+}
+
+.footer--links > ul > li {
+	margin: 0.5rem 2rem;
+	color: var(--primary-color);
+}
+
+.footer--links > ul > li > a {
+	color: var(--primary-color);
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+}
+
+.copyright {
+	text-align: center;
+	color: var(--primary-color);
+	font-weight: 600;
 }

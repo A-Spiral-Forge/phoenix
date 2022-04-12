@@ -1,0 +1,105 @@
+.section {
+	padding: 3rem 5rem;
+	border-bottom: var(--primary-border);
+}
+
+.section--heading {
+	font-size: 5.5rem;
+	font-style: normal;
+	line-height: 7rem;
+	font-weight: 800;
+}
+
+.section--para {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	margin: 2rem 0rem;
+	color: var(--secondary-color);
+}
+
+.section--link {
+	text-decoration: none;
+	color: var(--secondary-color);
+	font-weight: 900;
+	border-bottom: var(--primary-border);
+	border-width: 2px;
+	padding-bottom: 0.3rem;
+	text-transform: uppercase;
+	transition: all calc(var(--primary-transition-duration) / 2);
+}
+
+.section--link:hover {
+	padding-left: 1rem;
+	opacity: var(--hover-opacity);
+}
+
+.creative {
+	color: var(--secondary-color);
+}
+
+.developer {
+	color: var(--primary-color);
+	text-shadow: 7px 3px 29px var(--secondary-color);
+	font-weight: 700;
+}
+
+.tech--description {
+	margin: 2rem 0rem;
+}
+
+.lookbook {
+	color: var(--secondary-color);
+	font-size: 4rem;
+	margin-bottom: 0rem;
+}
+
+.design--description {
+	margin-top: 0rem;
+}
+
+.design--illustrations {
+	display: flex;
+	margin-top: 2rem;
+}
+
+.design--col1 {
+	flex: 1;
+	padding-right: 3rem;
+}
+
+.design--col2 {
+	flex: 1;
+	padding-left: 3rem;
+}
+
+.design--link {
+	display: inline-block;
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+}
+
+.contact--details {
+	background-color: var(--secondary-color);
+}
+
+.contact--heading {
+	font-weight: 400;
+	font-size: 4rem;
+	text-align: center;
+	line-height: 4.5rem;
+	letter-spacing: 0.02rem;
+	margin-bottom: 3rem;
+	color: var(--primary-color);
+}
+
+.mail {
+	text-align: center;
+	color: var(--primary-color);
+	letter-spacing: 0.02rem;
+	font-weight: 500;
+}
+
+.mail a {
+	text-decoration: none;
+	color: var(--primary-color);
+}

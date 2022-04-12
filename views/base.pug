@@ -15,14 +15,15 @@ html(lang="en")
     body 
         include templates/_navbtn
         include templates/_navmenu
+        include templates/_header
+        .col1 
+            include templates/_sidebar-shown
 
-        .main 
-            .col1 
-                include templates/_sidebar-shown
-            .col2
-                include templates/_header
+        .main
+            .main--content
                 block content
-        
+            include templates/_footer
+
         .overlay.hidden 
 
         script(src="/js/base.js") 

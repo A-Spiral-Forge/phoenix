@@ -1,0 +1,77 @@
+.project {
+	border: var(--primary-border);
+	width: 100%;
+	margin: 2rem 0rem;
+}
+
+.project--image {
+	width: 100%;
+	border-bottom: 2px solid var(--secondary-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	cursor: url('/images/cursor.png') 50 50, pointer;
+}
+
+.project--image:hover {
+	border-bottom: 2px solid var(--primary-color) !important;
+}
+
+.project--image img {
+	height: calc(18vw);
+	margin: auto;
+	transition: all var(--primary-transition-duration);
+}
+
+.project--image:hover img {
+	transform: scale(1.1);
+}
+
+.project--description {
+	padding: 2rem;
+}
+
+.project--description a {
+	text-decoration: none;
+}
+
+.project--name {
+	color: var(--secondary-color);
+	font-weight: 700;
+	font-size: 2.5rem;
+	line-height: 3rem;
+}
+
+.project--summary {
+	color: var(--secondary-color);
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	margin: 1rem 0rem;
+}
+
+.project--links {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2rem;
+}
+
+.project--links a {
+	text-align: center;
+	padding: 1.2rem;
+	font-size: large;
+	color: var(--secondary-color);
+	font-weight: 600;
+	flex: 2;
+	border: var(--primary-border);
+}
+
+.project--links a:hover {
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	transition: all var(--primary-transition-duration);
+}
+
+.link--space {
+	flex: 1;
+}

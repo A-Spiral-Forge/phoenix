@@ -1,0 +1,12 @@
+.project
+    a(href=`${project.weblink}`)
+        .project--image 
+            img(src=`/images/projects/${project.image}`, alt=`${project.name}`)
+    .project--description
+        a(href=`${project.weblink}`)
+            p.project--name= project.name
+        p.project--summary= project.summary
+        .project--links 
+            a(href=`${project.weblink}`) Website 
+            .link--space
+            a(href=`${project.repolink}`) Github

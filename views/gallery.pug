@@ -1,0 +1,26 @@
+extends base
+
+mixin galleryImage(name)
+    .gallery--image 
+        img(src=`/images/designs/${name}`, alt=`${name.split('.')[0]}`)
+
+block styles
+    link(rel="stylesheet", href="/css/gallery.css")
+
+block content
+    .main--div
+        .section.section--main
+            p.section--heading Some of My Creative Work
+            .main--image
+                img(src="/images/designs/main-design-pic.png", alt="My All Designs")
+        .section.section--gallery 
+                each imageName in designs.images 
+                    +galleryImage(imageName)
+
+block imageOverlay 
+    .image--overlay--div
+        .image--overlay
+        img.image--big(src="/images/designs/cor-visualizer-background.png", alt="")
+    
+block scripts
+    script(src="/js/gallery.js")

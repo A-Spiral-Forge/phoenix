@@ -20,6 +20,7 @@
 
 .project--image img {
 	height: calc(18vw);
+	min-height: 150px;
 	margin: auto;
 	transition: all var(--primary-transition-duration);
 }
@@ -34,19 +35,26 @@
 
 .project--description a {
 	text-decoration: none;
+	width: fit-content;
+	display: block;
 }
 
 .project--name {
 	color: var(--secondary-color);
 	font-weight: 700;
-	font-size: 2.5rem;
-	line-height: 3rem;
+	font-size: clamp(1.5rem, 2.75vw, 2.5rem);
+	/* font-size: 2.5rem; */
+	line-height: clamp(2rem, 4vw, 3rem);
+	/* line-height: 3rem; */
+	width: fit-content;
 }
 
 .project--summary {
 	color: var(--secondary-color);
-	font-size: 1.25rem;
-	line-height: 1.5rem;
+	font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+	/* font-size: 1.25rem; */
+	line-height: clamp(0.875rem, 3.5vw, 1.5rem);
+	/* line-height: 1.5rem; */
 	margin: 1rem 0rem;
 }
 
@@ -58,8 +66,12 @@
 
 .project--links a {
 	text-align: center;
-	padding: 1.2rem;
-	font-size: large;
+	padding: clamp(0.875rem, 1.5vw, 1.25rem);
+	/* padding: 1.25rem */
+	font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+	/* font-size: 1.25rem; */
+	line-height: clamp(0.875rem, 2vw, 1.5rem);
+	/* line-height: 1.5rem; */
 	color: var(--secondary-color);
 	font-weight: 600;
 	flex: 2;
@@ -74,4 +86,16 @@
 
 .link--space {
 	flex: 1;
+}
+
+@media (max-width: 991px) {
+	.project--image img {
+		min-height: 40vw;
+	}
+}
+
+@media (max-width: 300px) {
+	.project--image img {
+		min-height: 110px;
+	}
 }

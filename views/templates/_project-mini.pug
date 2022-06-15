@@ -1,12 +1,12 @@
 .project
-    a(href=`${project.weblink}`)
+    a(href=`${project.weblink}`, target="_blank")
         .project--image 
             img(src=`/images/projects/${project.image}`, alt=`${project.name}`)
     .project--description
-        a(href=`${project.weblink}`)
+        a(href=`${project.weblink}`, target="_blank")
             p.project--name= project.name
         p.project--summary= project.summary
         .project--links 
-            a(href=`${project.weblink}`) Website 
+            a(href=`${project.weblink}`, target="_blank") Website 
             .link--space
-            a(href=`${project.repolink}`) Github
+            a(href=`${project.repolink}`, target="_blank") Github

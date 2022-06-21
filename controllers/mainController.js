@@ -26,32 +26,7 @@ exports.getHomePage = (req, res, next) => {
 };
 
 exports.getContactPage = (req, res, next) => {
-	res.status(200).render('Contact', { title: 'Contact' });
-};
-
-exports.getGalleryPage = (req, res, next) => {
-	res.status(200).render('Gallery', {
-		title: 'Gallery',
-		designs: designsData,
-	});
-};
-
-exports.getAboutPage = (req, res, next) => {
-	res.status(200).render('about', { title: 'About', details: aboutData });
-};
-
-exports.getProjectsPage = (req, res, next) => {
-	if (!req.query.tag || req.query.tag === '') req.query.tag = 'All';
-
-	const projects = projectMiniData.projectsmini.filter((project) =>
-		project.keywords.includes(req.query.tag)
-	);
-
-	res.status(200).render('projects', {
-		title: 'Projects',
-		projects: projects,
-		tags: projectMiniData.tags,
-	});
+	res.status(200).render('contact', { title: 'Contact' });
 };
 
 exports.getGalleryPage = (req, res, next) => {

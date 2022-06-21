@@ -53,3 +53,28 @@ exports.getProjectsPage = (req, res, next) => {
 		tags: projectMiniData.tags,
 	});
 };
+
+exports.getGalleryPage = (req, res, next) => {
+	res.status(200).render('gallery', {
+		title: 'Gallery',
+		designs: designsData,
+	});
+};
+
+exports.getAboutPage = (req, res, next) => {
+	res.status(200).render('about', { title: 'About', details: aboutData });
+};
+
+exports.getProjectsPage = (req, res, next) => {
+	if (!req.query.tag || req.query.tag === '') req.query.tag = 'All';
+
+	const projects = projectMiniData.projectsmini.filter((project) =>
+		project.keywords.includes(req.query.tag)
+	);
+
+	res.status(200).render('projects', {
+		title: 'Projects',
+		projects: projects,
+		tags: projectMiniData.tags,
+	});
+};

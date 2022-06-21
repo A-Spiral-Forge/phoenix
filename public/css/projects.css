@@ -136,6 +136,7 @@ p.tags:hover {
 	margin-top: 2rem;
 }
 
+<<<<<<< HEAD
 .nothing {
 	width: 100%;
 	height: 100%;
@@ -154,6 +155,8 @@ p.tags:hover {
 	width: fit-content;
 }
 
+=======
+>>>>>>> 0c0551c16aa4e4420ee4431160afaece37e1db06
 @media (max-width: 991px) {
 	.design--illustrations {
 		grid-template-columns: auto;

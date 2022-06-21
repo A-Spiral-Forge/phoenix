@@ -4,4 +4,55 @@ block styles
     link(rel="stylesheet", href="/css/about.css")
 
 block content
-    
+    .section.about
+        .section--left
+            p.section--heading.about--greet Hi!
+            p.section--heading.about--name Anushtha Here ;)
+            p.section--para I am born and raised in India and I am currently
+                br 
+                |completing my 
+                b graduation from IIIT Allahabad
+                br
+                |will be completed in 2024. I am persuing a 
+                br
+                b B.Tech degree in Information Technology. 
+                br
+                |I have an interest in 
+                b web development, 
+                br
+                b UI/UX designing 
+                |and I am building my 
+                br
+                |skill set in these field but ofcourse 
+                br
+                |never say no to new work ✌
+        .section--right
+            .section--image 
+                img(src="/images/my-formal.png", alt="Phoenix Formal")
+    .section.hobbies
+        .section--right.section--right--2 
+            .section--image.section--image--2
+                .swiper.mySwiper
+                    .swiper-wrapper
+                        each image in details.imagesSlides
+                            .swiper-slide
+                                img(src=`/images/about/${image}`, alt=`About ${image.split(".")[0]}`)
+                    .swiper-button-next
+                    .swiper-button-prev
+                    .swiper-pagination
+                //- img(src="/images/my-formal.png", alt="Phoenix Formal")
+        .section--left.section--left--2
+            p.section--para In my free time you can catch me doing 
+                br
+                b sketching, dancing, traveling, listening 
+                br
+                b music 
+                |or 
+                b shopping ;P 
+                |and also relaxing 
+                br
+                |myself with 
+                b netflix and chill 
+                |with
+                br
+                |handfull of popcorns 💃

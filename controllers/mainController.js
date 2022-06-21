@@ -26,11 +26,11 @@ exports.getHomePage = (req, res, next) => {
 };
 
 exports.getContactPage = (req, res, next) => {
-	res.status(200).render('contact', { title: 'Contact' });
+	res.status(200).render('Contact', { title: 'Contact' });
 };
 
 exports.getGalleryPage = (req, res, next) => {
-	res.status(200).render('gallery', {
+	res.status(200).render('Gallery', {
 		title: 'Gallery',
 		designs: designsData,
 	});

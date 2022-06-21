@@ -1,23 +1,13 @@
-// const root = document.querySelector(':root');
-const imageOverlay = document.querySelector('.image--overlay--div');
-const bigImage = document.querySelector('.image--big');
-const smallImageSection = document.querySelector('.section--gallery');
-const popUpTimeout = 0.5;
-
-const toggleBigImage = (width) => {
-	root.style.setProperty('--image-overlay-width', `${width}%`);
+const toggleBigImage = (width, DOM) => {
+	DOM.root.style.setProperty('--image-overlay-width', `${width}%`);
 };
 
-imageOverlay.addEventListener('click', (e) => {
-	if (e.target.closest('img')) return;
-	toggleBigImage(0);
-});
+exports.openImage = (DOM) => {
+	const imageSrc = DOM.image.getAttribute('src');
+	DOM.bigImage.setAttribute('src', imageSrc);
+	toggleBigImage(100, DOM);
+};
 
-smallImageSection.addEventListener('click', (e) => {
-	const image = e.target.closest('img');
-	if (!image) return;
-
-	const imageSrc = image.getAttribute('src');
-	bigImage.setAttribute('src', imageSrc);
-	toggleBigImage(100);
-});
+exports.closeImage = (DOM) => {
+	toggleBigImage(0, DOM);
+};

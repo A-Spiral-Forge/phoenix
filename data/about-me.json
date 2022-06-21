@@ -1,9 +1,3 @@
 {
-	"about": [
-		{
-			"title": "Birth Date",
-			"detail": "30/08/2002",
-			"image": "birth.png"
-		}
-	]
+	"imagesSlides": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
 }

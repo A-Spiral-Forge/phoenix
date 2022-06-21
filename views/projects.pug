@@ -23,8 +23,11 @@ block content
                             li.tags(value=`${tag}`)= tag
                 button.filter--button(type="submit") Filter 
 
-        .design--illustrations
-            each project in projects
-                +project_template(project)
-    
-    script(src="/js/projects.js")
+        - if(projects.length == 0)
+            .nothing
+                p Nothing to display here :(
+                p Try searching with another tag.
+        -else
+            .design--illustrations
+                each project in projects
+                    +project_template(project)

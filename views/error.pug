@@ -1,0 +1,10 @@
+extends base
+
+block styles 
+    link(rel='stylesheet', href='/css/error.css')
+
+block content
+    .error
+        h2.error-status= error.status
+        h1.error-heading= error.heading
+        p.error-message= error.message

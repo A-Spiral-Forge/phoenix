@@ -9,4 +9,6 @@ router.get('/designs', mainController.getGalleryPage);
 router.get('/about', mainController.getAboutPage);
 router.get('/projects', mainController.getProjectsPage);
 
+router.get('*', mainController.getErrorPage);
+
 module.exports = router;
